@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts API</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+
+    <h1>DummyJSON DataBase</h1>
+    
+    <div id="posts-container"></div>
+
+    <script>
+        fetch('https://dummyjson.com/posts')
+            .then(res => res.json())
+            .then(data => {
+                let container = document.getElementById("posts-container");
+
+                data.posts.forEach(post => {
+                    let card = document.createElement("div");
+                    card.className = "post-card";
+
+                    card.innerHTML = `
+                        <h2>${post.title}</h2>
+                        <p>${post.body}</p>
+                        <p><strong>Tags:</strong> ${post.tags.join(", ")}</p>
+                        <p><strong>Likes:</strong> ${post.reactions.likes}</p>
+                    `;
+
+                    container.appendChild(card);
+                });
+            })
+            .catch(error => console.log(error));
+    </script>
+
+</body>
+</html>
