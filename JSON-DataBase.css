@@ -9,6 +9,7 @@ h1 {
     color: #ffffff;
     margin-bottom: 30px;
 }
+
 #posts-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
