@@ -16,7 +16,6 @@ h1 {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
-
 .post-card {
     background: rgb(71, 179, 230);
     padding: 20px;
